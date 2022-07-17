@@ -1,2 +1,4 @@
 import { BaseService } from "./base.service";
-export { BaseService };
+import { eventService } from "./event.service";
+
+export { BaseService, eventService };
