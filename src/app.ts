@@ -35,7 +35,7 @@ app.use("*", (err: any, req: Request, res: Response) => {
   );
   errorResponse(
     res,
-    "Please use /api/v1/<specific resource> to acess the API or check the docs for list of available endpoints",
+    "Please use /<specific resource> to acess the API or check the docs for list of available endpoints",
     404
   );
 });

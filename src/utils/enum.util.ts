@@ -1,7 +1,5 @@
 export type innerResponse = {
-  status: boolean;
-  statusCode: number;
-  message: string;
+  status: string;
   data: any;
 };
 
@@ -17,3 +15,8 @@ export type DataOrError<T> =
   | {
       error: Error;
     };
+
+export interface Required<T> {
+  type: T;
+  required: true;
+}

@@ -1,17 +1,7 @@
 import { Response } from "express";
 
-export const successRes = (
-  res: Response,
-  data: any,
-  message = "success",
-  status = 200
-) => {
-  return res.status(status).json({
-    status: true,
-    data,
-    message,
-    error: false,
-  });
+export const successRes = (res: Response, data: any, status = 200) => {
+  return res.status(status).json(data);
 };
 
 export const errorResponse = (

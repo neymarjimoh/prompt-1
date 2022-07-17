@@ -12,7 +12,7 @@ const routes = [
 
 export default (app: Application) => {
   routes.forEach((element) => {
-    app.use(`${apiPrefix}/${element.prefix}`, element.name);
+    app.use(`/${element.prefix}`, element.name);
   });
   return app;
 };

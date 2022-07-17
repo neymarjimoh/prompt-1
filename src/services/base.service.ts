@@ -2,23 +2,6 @@ import { FilterQuery, UpdateQuery, QueryOptions, Model } from "mongoose";
 import { innerResponse } from "../utils/enum.util";
 
 export class BaseService {
-  public internalResponse(
-    status = true,
-    data: any,
-    statusCode = 200,
-    message?: string
-  ): innerResponse {
-    if (!message) {
-      message = status ? "success" : "failure";
-    }
-    return {
-      status,
-      statusCode,
-      message,
-      data,
-    };
-  }
-
   public async save<T>(model: T, opts: {}): Promise<T> {
     return await (model as any).save(opts);
   }
@@ -35,7 +18,7 @@ export class BaseService {
   public async findAll<T>(
     model: Model<T>,
     params: FilterQuery<T>,
-    options: QueryOptions = { sort: "createdAt" }
+    options: QueryOptions = {}
   ): Promise<T[]> {
     return await model.find(params, options);
   }
